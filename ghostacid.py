@@ -1,14 +1,24 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from ga.config.banner import banner_text
+# Custom Imports
+from ga.lib.encrypt import Encrypt
+from ga.lib.log import Log
 
 def main():
     """
     Main entry into the application
     """
-    print banner_text
+    pass
+
+def test():
+    """
+    Function for testing - to be deleted
+    """
+    Log.elog("This is an error test")
+    Log.ilog("This is an information test")
 
 if __name__ == "__main__":
 
-    main()
+    # main()
+    test()

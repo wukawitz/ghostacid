@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import subprocess
-import base64
-
+# Standard Imports
 from Crypto import Random
 from Crypto.Cipher import AES
+import subprocess
+import base64
 
 class Encrypt(object):
     """
