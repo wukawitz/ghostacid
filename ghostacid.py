@@ -4,6 +4,7 @@
 # Custom Imports
 from ga.lib.encrypt import Encrypt
 from ga.lib.log import Log
+from ga.lib.validate import Validate
 
 def main():
     """
@@ -15,10 +16,9 @@ def test():
     """
     Function for testing - to be deleted
     """
-    Log.elog("This is an error test")
-    Log.ilog("This is an information test")
+    pass
 
 if __name__ == "__main__":
 
-    # main()
+    main()
     test()

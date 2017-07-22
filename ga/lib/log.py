@@ -27,8 +27,11 @@ class Log(object):
         """
         Write the log message
         """
-        with open(log_file, "a") as f_obj:
-            f_obj.write(message)
+        try:
+            with open(log_file, "a") as f_obj:
+                f_obj.write(message)
+        except Exception, e_obj:
+            pass # We pass here due to no place to log if this occurs
 
     @staticmethod
     def ilog(message):
@@ -39,7 +42,7 @@ class Log(object):
             log_message = Log._clean(message)
             Log._write(INFORMATION_LOG, log_message)
         except Exception, e_obj:
-            pass
+            pass # We pass here due to no place to log if this occurs
 
     @staticmethod
     def elog(message):
@@ -50,4 +53,4 @@ class Log(object):
             log_message = Log._clean(message)
             Log._write(ERROR_LOG, log_message)
         except Exception, e_obj:
-            pass
+            pass # We pass here due to no place to log if this occurs
