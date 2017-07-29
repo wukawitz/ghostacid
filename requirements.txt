@@ -1,0 +1,14 @@
+Ghostacid Requirements:
+
+    Features:
+
+        [*] Must have the basic functionality of a RAT
+        [*] The ability to run commands on the remote box
+        [*] The ability to upload a file of any type
+        [*] The ability to download a file of any type
+        [*] The ability to take screenshots
+        [*] Send all data encrypted
+        [*] Awake at specified time intervals
+        [*] Be able to handle multiple clients at once
+        [*] Save data into a database as loot
+        [*] Must be able to run scripts on the client
