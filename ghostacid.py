@@ -133,11 +133,8 @@ class Communicate(object):
     def connect_and_communicate(self, **kwargs):
         """
         Connect to a listener and communicate
-        Arguments:
-            callback - the callback used to process data received
         """
         try:
-            callback = kwargs.get("callback", None)
             self.sock.connect((self.host, self.port))
             while True:
                 self.sock.send(self._get_prompt())
